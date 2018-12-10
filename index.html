@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<title>Tooltip Text</title>
+	<style type="text/css">
+		body{
+			font-family: sans-serif;
+			background-color: #000;
+			color: white;
+		}
+		.container{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			font-size: 20px;
+			display: inline-block;
+			cursor: default;
+			border-bottom: 1px solid white;
+		}
+		.container span{
+			position: absolute;
+			width: 120px;
+			bottom: 125%;
+			left: 50%;
+			background: white;
+			color: black;
+			text-align: center;
+			padding: 5px 0px;
+			margin-left: -60px;
+			border-radius: 6px;
+			visibility: hidden;
+			opacity: 0;
+			transition: opacity .5s;
+		}
+		.container span::after{
+			content: "";
+			position: absolute;
+			top: 100%;
+			left: 50%;
+			margin-left: -5px;
+			border-width: 5px;
+			border-style: solid;
+			border-color: white transparent transparent transparent;
+		}
+		.container:hover span{
+			visibility: visible;
+			opacity: 1;
+		}
+	</style>
+
+<body>
+	<div class="container">Hover
+		<span>Tooltip text</span>
+	</div>
+</body>
+</html>
